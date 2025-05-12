@@ -76,6 +76,5 @@ def submit():
         file = os.path.join(img, img_name)
         return render_template('result.html', pred = [file, output])
 
-# if __name__=='__main__':
-#     app.run(debug=True)
-    # app.run(debug=False, host='0.0.0.0')
+if __name__=='__main__':
+    app.run(debug=True)
