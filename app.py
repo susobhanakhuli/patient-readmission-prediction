@@ -47,33 +47,14 @@ def submit():
         final=[np.array(int_features)]
         prediction = model.predict_proba(final)
         print(prediction)
-        # crop_dict = {
-        #     20: 'rice',
-        #     11: 'maize',
-        #     3: 'chickpea',
-        #     9: 'kidney beans',
-        #     18: 'pigeon peas',
-        #     13: 'moth beans',
-        #     14: 'mung bean',
-        #     2: 'black gram',
-        #     10: 'lentil',
-        #     19: 'pomegranate',
-        #     1: 'banana',
-        #     12: 'mango',
-        #     7: 'grapes',
-        #     21: 'watermelon',
-        #     15: 'muskmelon',
-        #     0: 'apple',
-        #     16: 'orange',
-        #     17: 'papaya',
-        #     4: 'coconut',
-        #     6: 'cotton',
-        #     8: 'jute',
-        #     5: 'coffee'
-        # }
+        readmission = {
+            0: 'Less-than-30-days',
+            1: 'Greater-than-30-days',
+            2: 'No-readmission',
+        }
 
-        # # print(crop_dict[prediction])
-        # count = 0
+        # print(crop_dict[prediction])
+        count = 0
         # mx_pred = 0
         # mx_pred_count =0
 
@@ -89,10 +70,10 @@ def submit():
         # if count>21:
         #     count = mx_pred_count
 
-        # output = crop_dict[count]
-        # img_name = output+".png"
-        # file = os.path.join(img, img_name)
-        # return render_template('result.html', pred = [file, output])
+        output = readmission[count]
+        img_name = output+".png"
+        file = os.path.join(img, img_name)
+        return render_template('result.html', pred = [file, output])
 
 # if __name__=='__main__':
 #     app.run(debug=True)
