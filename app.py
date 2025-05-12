@@ -55,20 +55,21 @@ def submit():
 
         # print(crop_dict[prediction])
         count = 0
-        # mx_pred = 0
-        # mx_pred_count =0
-
+        mx_pred = 0
+        mx_pred_count = 0
         
-        # for i in prediction[0]:
-        #     if i == 1:
-        #         break
-        #     else:
-        #         if i>mx_pred:
-        #             mx_pred = i
-        #             mx_pred_count = count
-        #     count += 1
-        # if count>21:
-        #     count = mx_pred_count
+        for i in prediction[0]:
+            if i == 1:
+                break
+            else:
+                if i>mx_pred:
+                    mx_pred = i
+                    mx_pred_count = count
+            count += 1
+        if count>2:
+            count = mx_pred_count
+
+        print(count)
 
         output = readmission[count]
         img_name = output+".png"
