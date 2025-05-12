@@ -1,4 +1,4 @@
 # nixpacks.toml
 
 [start]
-cmd = "flask app"
+cmd = "gunicorn app:app"
