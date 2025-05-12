@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crop Recommendation System</title>
+    <title>Patient Readmission Prediction System</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="static/Images/favicon.ico">
@@ -27,10 +27,10 @@
 
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-     <script type="text/javascript" src="{{url_for('static',filename='script/script.js')}}"></script>
-   
-    </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script type="text/javascript" src="{{url_for('static',filename='script/script.js')}}"></script>
+
+</head>
 
 <body>
     <!-- The modal -->
@@ -39,24 +39,24 @@
             <span class="close" onclick="history.back()">&times;</span>
             <h2>Result</h2>
             <p id="cropName">{{pred[1]}}</p>
-            <img src= "{{pred[0]}}" id="resultImage" alt="Result Image">
+            <img src="{{pred[0]}}" id="resultImage" alt="Result Image">
         </div>
     </div>
 
- 
+
 
 </body>
 <script>
     function confettiShooter() {
-    const element = document.getElementById('e0DQ82qcIov1');
-    element.svgatorPlayer.ready(function() {
-      // this refers to the player object
-      const player = element ? element.svgatorPlayer : {};
-      if (player.play) {
-        player.play();
-      }
-    });
-  }
+        const element = document.getElementById('e0DQ82qcIov1');
+        element.svgatorPlayer.ready(function () {
+            // this refers to the player object
+            const player = element ? element.svgatorPlayer : {};
+            if (player.play) {
+                player.play();
+            }
+        });
+    }
 </script>
 
 </html>
