@@ -178,6 +178,8 @@ body {
 
 }
 
+
+
 .buttons {
     display: flex;
     /* Add flex display to make the children elements flex items  */
