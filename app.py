@@ -38,12 +38,17 @@ def home():
 def contact():
     return render_template('contact.html')
 
-
 # Result HTML page
 @app.route('/submit',methods=['POST','GET'])
 def submit():
     if request.method=='POST':
         int_features=[float(x) for x in request.form.values()]
+        # int_features[14] = diag_1_encoder.transform([int_features[14]])[0]
+        # int_features[15] = diag_2_encoder.transform([int_features[15]])[0]
+        # int_features[16] = diag_3_encoder.transform([int_features[16]])[0]
+        # int_features[8] = medical_specialty_encoder.transform([int_features[8]])[0]
+        # int_features[7] = payer_code_encoder.transform([int_features[7]])[0]
+        print(int_features)
         final=[np.array(int_features)]
         prediction = model.predict_proba(final)
         print(prediction)
